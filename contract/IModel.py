@@ -5,3 +5,6 @@ class IModel(ABC):
     @abstractmethod
     def getHelloWorld(self) -> str:
         ...
+
+    def getTitle(self)->str:
+        ...

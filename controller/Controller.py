@@ -10,6 +10,7 @@ class Controller(IController):
     def __init__(self, view: IView, model: IModel):
         self.__view = view
         self.__model = model
+        self.__view.setTilte(self.__model.getTitle())
 
     def getView(self):
         return self.__view
