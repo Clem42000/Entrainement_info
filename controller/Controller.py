@@ -1,6 +1,6 @@
-from contract import IController
-from contract import IView
-from contract import IModel
+from contract.IController import IController
+from contract.IView import IView
+from contract.IModel import IModel
 
 
 class Controller(IController):
@@ -8,7 +8,6 @@ class Controller(IController):
     __model: IModel
 
     def __init__(self, view: IView, model: IModel):
-        IController.__init__(self)
         self.__view = view
         self.__model = model
 
@@ -19,4 +18,4 @@ class Controller(IController):
         return self.__model
 
     def start(self):
-        self.__view(self.__model.getHelloWorld())
+        self.__view.display(self.__model.getHelloWorld())

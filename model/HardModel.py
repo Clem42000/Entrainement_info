@@ -1,11 +1,10 @@
-from model import Model
+from contract.IModel import IModel
 
 
-class HardModel(Model):
+class HardModel(IModel):
     __helloWorld: str
 
     def __init__(self):
-        Model.__init__(self)
         self.__helloWorld = "helloworld"
 
     def getHelloWorld(self) -> str:
